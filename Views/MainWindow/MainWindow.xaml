@@ -1,0 +1,25 @@
+﻿<Window x:Class="AviaPassangerViewer.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AviaPassangerViewer.Views"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".25*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Margin" Value="5"/>
+                </Style>
+            </StackPanel.Resources>
+            <Button Content="Clear view" Command="{Binding ResetSelectedView}"/>
+            <Button Content="Passanger viewer" Command="{Binding SelectPassangerViewer}"/>
+        </StackPanel>
+        <ContentPresenter Grid.Column="1" Content="{Binding DisplayedView}"/>
+    </Grid>
+</Window>
