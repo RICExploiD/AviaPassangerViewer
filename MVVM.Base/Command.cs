@@ -2,7 +2,7 @@
 
 namespace AviaPassangerViewer.MVVM.Base
 {
-    internal class Command : CommandBase
+    internal sealed class Command : CommandBase
     {
         public Command(Action action, Func<bool> canExecute) : base(o => action(), o => canExecute()) { }
 
