@@ -14,8 +14,7 @@ namespace AviaPassangerViewer.Views
             
             _viewModel = new PassangerViewerViewModel(); 
 
-            DataContext = this;
-
+            DataContext = _viewModel;
         }
     }
 }

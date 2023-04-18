@@ -20,6 +20,14 @@ namespace AviaPassangerViewer.Views
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow() { _ = new MainWindowViewModel(this); }
+        private MainWindowViewModel _viewModel;
+        public MainWindow()
+        {
+            InitializeComponent();
+            
+            _viewModel = new MainWindowViewModel(); 
+
+            DataContext = _viewModel;
+        }
     }
 }
