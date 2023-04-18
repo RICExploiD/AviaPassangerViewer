@@ -7,6 +7,15 @@ namespace AviaPassangerViewer.Views
     /// </summary>
     public partial class PassangerViewer : UserControl
     {
-        public PassangerViewer() { _ = new PassangerViewerViewModel(this); }
+        private PassangerViewerViewModel _viewModel;
+        public PassangerViewer() 
+        {
+            InitializeComponent();
+            
+            _viewModel = new PassangerViewerViewModel(); 
+
+            DataContext = this;
+
+        }
     }
 }

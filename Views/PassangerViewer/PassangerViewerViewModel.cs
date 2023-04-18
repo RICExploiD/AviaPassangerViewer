@@ -1,10 +1,9 @@
 ﻿using System;
 using System.IO;
 using System.Windows;
-    using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 using Microsoft.Win32;
-using System.Collections.ObjectModel;
 
 namespace AviaPassangerViewer.Views
 {
@@ -13,15 +12,10 @@ namespace AviaPassangerViewer.Views
 
     internal sealed class PassangerViewerViewModel : NotifyPropertyChanged
     {
-        private readonly PassangerViewer _view;
         public ObservableCollection<AviaPassanger> AviaPassangerList { get; set; } = new();
         public Command UploadFile { get; set; } = new();
-        public PassangerViewerViewModel(PassangerViewer view)
+        public PassangerViewerViewModel()
         {
-            _view = view;
-            _view.InitializeComponent();
-            _view.DataContext = this;
-
             UploadFile.ExecutableAction += _ => GetPassangerFile();
         }
         public void GetPassangerFile()
