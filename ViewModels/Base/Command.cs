@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AviaPassangerViewer.MVVM.Base
+namespace AviaPassangerViewer.ViewModels.Base
 {
     internal sealed class Command : CommandBase
     {

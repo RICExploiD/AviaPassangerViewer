@@ -8,7 +8,7 @@ using Microsoft.Win32;
 namespace AviaPassangerViewer.ViewModels
 {
     using Models;
-    using MVVM.Base;
+    using ViewModels.Base;
 
     internal sealed class PassangerViewerViewModel : NotifyPropertyChanged
     {
@@ -37,8 +37,8 @@ namespace AviaPassangerViewer.ViewModels
 
             foreach ( var entity in entities ) 
             {
-                try 
-                { 
+                try
+                {
                     var passanger = entity.Split(';');
 
                     var person = new Person(passanger[0], passanger[1], passanger[2]);
@@ -46,7 +46,7 @@ namespace AviaPassangerViewer.ViewModels
 
                     AviaPassangerList.Add(new AviaPassanger(person, flight));
                 }
-                catch (Exception ex) { }
+                catch { }
             }
 
             if (AviaPassangerList?.Count == 0)

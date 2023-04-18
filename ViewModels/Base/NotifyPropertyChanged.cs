@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace AviaPassangerViewer.MVVM.Base
+namespace AviaPassangerViewer.ViewModels.Base
 {
     public abstract class NotifyPropertyChanged : INotifyPropertyChanged
     {

@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
+using System.ComponentModel.DataAnnotations;
 
 namespace AviaPassangerViewer.Models
 {
@@ -20,10 +20,13 @@ namespace AviaPassangerViewer.Models
         {
             var protocol = new Regex(@"^[a-zA-Z]+$");
 
-            if (string.IsNullOrEmpty(Name) || !protocol.IsMatch(Name)
-                || string.IsNullOrEmpty(Family) || !protocol.IsMatch(Family)
-                || Patronomic is not null ? string.IsNullOrEmpty(Family) || !protocol.IsMatch(Family) : true)
-                throw new ValidationException("Name, family or patronimic is not valid.");
+            var NameIsValid = protocol.IsMatch(Name);
+            var FamilyIsValid = protocol.IsMatch(Family);
+            var PatronomicIsValid = Patronomic is null || protocol.IsMatch(Patronomic);
+
+            if (NameIsValid || FamilyIsValid || PatronomicIsValid) return;
+                
+            throw new ValidationException("Name, family or patronimic is not valid.");
         }
     }
 }

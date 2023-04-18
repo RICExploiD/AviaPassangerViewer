@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace AviaPassangerViewer.MVVM.Base
+namespace AviaPassangerViewer.ViewModels.Base
 {
     internal abstract class CommandBase : ICommand
     {

@@ -3,7 +3,8 @@
 namespace AviaPassangerViewer.ViewModels
 {
     using Views;
-    using MVVM.Base;
+    using ViewModels.Base;
+
     internal sealed class MainWindowViewModel : NotifyPropertyChanged
     {
         private UserControl _displayedView;
