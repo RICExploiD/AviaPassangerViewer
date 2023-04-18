@@ -37,11 +37,7 @@ namespace AviaPassangerViewer.Views
         }
         public void ParsePassangerFile(string fileName)
         {
-            using var stream = new StreamReader(fileName);
-
-            var file = stream.ReadToEnd();
-
-            var entities = file.Trim().Split("\r\n");
+            var entities = File.ReadAllLines(fileName);
 
             AviaPassangerList?.Clear();
 
