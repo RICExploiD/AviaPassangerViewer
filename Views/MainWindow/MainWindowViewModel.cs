@@ -6,7 +6,7 @@ namespace AviaPassangerViewer.Views
     internal sealed class MainWindowViewModel : NotifyPropertyChanged
     {
         private UserControl _displayedView;
-        public UserControl DisplayedView 
+        public UserControl DisplayedView
         {
             get => _displayedView;
             set
@@ -18,12 +18,14 @@ namespace AviaPassangerViewer.Views
                 OnPropertyChanged(nameof(DisplayedView));
             }
         }
-        public Command SelectPassangerViewer { get; set; } = new();
-        public Command ResetSelectedView { get; set; } = new();
+        public Command SelectPassangerViewer { get; set; }
+        public Command ResetSelectedView { get; set; }
         public MainWindowViewModel()
         {
-            SelectPassangerViewer.ExecutableAction += _ => ChangeViewToPassangerViewer();
-            ResetSelectedView.ExecutableAction += _ => ResetView();
+            DisplayedView = new PassangerViewer();
+
+            SelectPassangerViewer = new(ChangeViewToPassangerViewer);
+            ResetSelectedView = new(ResetView);
         }
         public void ChangeViewToPassangerViewer() { DisplayedView = new PassangerViewer(); }
         public void ResetView() { DisplayedView = null; }

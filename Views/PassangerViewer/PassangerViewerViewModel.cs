@@ -13,10 +13,10 @@ namespace AviaPassangerViewer.Views
     internal sealed class PassangerViewerViewModel : NotifyPropertyChanged
     {
         public ObservableCollection<AviaPassanger> AviaPassangerList { get; set; } = new();
-        public Command UploadFile { get; set; } = new();
+        public Command UploadFile { get; set; }
         public PassangerViewerViewModel()
         {
-            UploadFile.ExecutableAction += _ => GetPassangerFile();
+            UploadFile = new(GetPassangerFile);
         }
         public void GetPassangerFile()
         {
