@@ -26,14 +26,14 @@ namespace AviaPassangerViewer.Views
         }
         public void GetPassangerFile()
         {
-            var s = new OpenFileDialog()
+            var fileDialog = new OpenFileDialog()
             {
                 Filter = "CSV Files (*.csv)|*.csv"
             };
 
-            if (s.ShowDialog() != true) return;
+            if (fileDialog.ShowDialog() != true) return;
 
-            ParsePassangerFile(s.FileName);
+            ParsePassangerFile(fileDialog.FileName);
         }
         public void ParsePassangerFile(string fileName)
         {
