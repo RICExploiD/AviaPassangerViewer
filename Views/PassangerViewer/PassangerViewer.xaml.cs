@@ -2,6 +2,7 @@
 
 namespace AviaPassangerViewer.Views
 {
+    using ViewModels;
     /// <summary>
     /// Interaction logic for PassangerViewer.xaml
     /// </summary>

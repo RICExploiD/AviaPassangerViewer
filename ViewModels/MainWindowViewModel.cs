@@ -1,7 +1,8 @@
 ﻿using System.Windows.Controls;
 
-namespace AviaPassangerViewer.Views
+namespace AviaPassangerViewer.ViewModels
 {
+    using Views;
     using MVVM.Base;
     internal sealed class MainWindowViewModel : NotifyPropertyChanged
     {

@@ -5,7 +5,7 @@ using System.Collections.ObjectModel;
 
 using Microsoft.Win32;
 
-namespace AviaPassangerViewer.Views
+namespace AviaPassangerViewer.ViewModels
 {
     using Models;
     using MVVM.Base;
