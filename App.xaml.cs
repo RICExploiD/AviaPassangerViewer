@@ -19,21 +19,9 @@ namespace AviaPassangerViewer
         }
         protected void HandleUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)
         {
-            if (e.Exception is null)
-            {
-                Current.Shutdown();
-                return;
-            }
+            string errorMessage = $"An application error occurred. \nError:\n{e?.Exception.Message ?? "Exception is null"}";
 
-            string errorMessage = string.Format("An application error occurred. " +
-                $"Error:{e.Exception.Message}\n\n" +
-                "Do you want to continue?");
-
-            if (MessageBox.Show(errorMessage, "Unhandled Error", 
-                MessageBoxButton.YesNoCancel, MessageBoxImage.Error) == MessageBoxResult.No)
-            {
-                Current.Shutdown();
-            }
+            MessageBox.Show(errorMessage, "Unhandled Error");
         }
     }
 }
